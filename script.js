@@ -11,6 +11,13 @@ document.querySelector('.hamburger').addEventListener('click', function () {
   document.querySelector('.navbar').classList.toggle('active');
 });
 
+const barsAnimation = document.querySelector('.bars-animation');
+const homeSection = document.getElementById('home');
+
+
+barsAnimation.addEventListener('animationend', () => {
+  homeSection.style.backgroundColor = '#1f242d'; 
+});
 
 
 window.addEventListener("scroll", function () {
