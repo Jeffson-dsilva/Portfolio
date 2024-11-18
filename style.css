@@ -28,10 +28,10 @@ a {
   border-radius: 10px;
   animation: show-content 1.5s linear forwards;
   animation-delay: 1.2s;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  backdrop-filter: blur(20px); /* Glass blur effect */
-  -webkit-backdrop-filter: blur(20px); /* Safari support */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Optional: subtle shadow */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
 }
 @keyframes show-content {
   100% {
