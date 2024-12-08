@@ -852,7 +852,10 @@ section h2 {
   }
   .contact { 
   padding: 50px 20px;
-}
+  }
+  .contact p {
+  margin-bottom: 30px;
+  }
 
 @media (max-width: 480px) {
   .navbar ul {
