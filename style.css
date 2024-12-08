@@ -586,7 +586,7 @@ section h2 {
 }
 
 .contact {
-  padding: 50px 20px;
+  padding: 50px 20px 10px;
   background-color: #1f242d;
   color: #fff;
   box-sizing: border-box;
@@ -604,7 +604,7 @@ section h2 {
 .contact p {
   font-size: 1.1rem;
   color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .contact-container {
   display: flex;
