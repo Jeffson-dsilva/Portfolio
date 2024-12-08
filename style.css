@@ -850,6 +850,8 @@ section h2 {
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+  .contact { 
+  padding: 50px 20px;
 }
 
 @media (max-width: 480px) {
