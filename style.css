@@ -269,21 +269,23 @@ section h2 {
   font-size: 20px;
   margin: 10px 0 25px;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 .about-content {
-  display: flex;
+  display: block;
   width: 100%;
   gap: 20px;
   padding-top: 30px;
 }
-.about-content .about-left {
-  width: 50%;
+.about-content .about-top {
+  width: 100%;
 }
 .about-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 60px;
+  align-items: center;
+  justify-content: center;
 }
 .about-btn {
   background: transparent;
@@ -292,6 +294,7 @@ section h2 {
   padding: 15px;
   text-align: center;
   cursor: pointer;
+  width: -webkit-fill-available;
   transition: background 0.3s, color 0.3s;
 }
 .about-btn.active,
@@ -299,13 +302,17 @@ section h2 {
   background-color: #7cf03d;
   color: #1f242d;
 }
-.about-right {
-  width: 50%;
+.about-bottom {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
 }
 .education {
+  display: inline-block;
   border: 2px solid #fff;
   padding: 20px;
   margin: 10px;
+  width: 70%;
 }
 .education:hover {
   border: 2px solid #7cf03d;
@@ -328,6 +335,8 @@ section h2 {
   position: relative;
   overflow: hidden;
   display: inline-block;
+  text-align: center;
+  align-items: center;
 }
 
 .about-details h3 span::before {
@@ -364,7 +373,7 @@ section h2 {
   display: block;
 }
 .skills-category {
-  margin: 20px 0 30px;
+  margin: 30px 0 30px;
 }
 .skills-category h4 {
   font-size: 20px;
@@ -374,14 +383,13 @@ section h2 {
 .skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 30px;
   margin-bottom: 20px;
   padding: 15px;
   border: 2px solid #ccc;
@@ -432,6 +440,9 @@ section h2 {
 .skill-item i.fa-css3-alt {
   color: #1572B6;
 }
+.skill-item i.fa-bootstrap {
+  color: #1572B6;
+}
 .skill-item i.fa-database {
   color: #00758F;
 }
@@ -440,6 +451,41 @@ section h2 {
 }
 .skill-item i.fa-windows {
   color: #00A4EF;
+}
+
+.internship-item {
+  flex: 1 1 calc(45% - 20px); 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  text-align: center; 
+  padding: 20px;
+  background: transparent; 
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.internship-item:hover {
+  transform: translateY(-10px); 
+  box-shadow: 2px 6px 12px 2px rgba(124, 240, 61, 0.7);
+  border: 1px solid #7cf03d;
+}
+.internship-img {
+  width: 60%;
+  height: 350px;
+  object-fit: contain;
+  border-radius: 4px; 
+  transition: transform 0.3s ease; 
+}
+.internship-item:hover .internship-img {
+  transform: scale(1.1); 
+}
+.internship-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #7cf03d;
+  margin-bottom: 10px;
 }
 .certification-content {
   margin-top: 20px;
@@ -856,7 +902,7 @@ section h2 {
   .contact p {
   margin-bottom: 30px;
   }
-
+}
 @media (max-width: 480px) {
   .navbar ul {
     width: 200px;
@@ -886,6 +932,16 @@ section h2 {
   .certification-list {
     flex-direction: column;
     align-items: center; 
+  }
+  .internship-item{
+    padding: 10px;
+    gap: 10px;
+  }
+  .internship-img{
+    height: 250px;
+  }
+  .internship-title{
+    font-size: 1.0rem;
   }
   .certification-item {
     padding: 10px; 
