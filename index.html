@@ -46,7 +46,8 @@
       </h2>
       <p>Passionate about building modern, user-friendly web applications and scalable backend solutions. With expertise in frontend design, backend development, and data engineering, I strive to bridge the gap between innovative ideas and real-world implementation. Welcome to my portfolio—a showcase of my journey, skills, and projects.</p>
       <div class="btn-sci">
-        <a href="Img/resume/Resume JeffsonDsilva.pdf" download="Jeffson-CV.pdf" class="btn">Download CV</a>
+        <a href="Img/resume/Resume JeffsonDsilva.pdf" download="Jeffson'sResume.pdf" class="btn">Download Resume</a>
+        <button class="btn" id="viewCvBtn">View Resume</button>
         <div class="sci">
           <a href="https://github.com/Jeffson-dsilva" aria-label="GitHub"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/jeffson-dsilva1612" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
@@ -61,14 +62,26 @@
         </div>
       </div>
     </div>
+    <div id="cvModal" class="cv-modal" style="display: none;">
+      <div class="cv-modal-content">
+        <span class="close">&times;</span>
+        <h2>View Resume</h2>
+        <iframe src="Img/resume/Resume JeffsonDsilva.pdf" width="100%" height="600px"></iframe>
+      </div>
+    </div>
   </section>
   <!-- About Section -->
   <section id="about" class="about">
     <h2>About Me</h2>
     <div class="about-content">
       <div class="about-top">
-        <p class="desc">I am currently pursuing MCA at St. Joseph Engineering College, Mangalore. I have a strong foundation in C, Python, HTML, CSS,
-          and JavaScript, with excellent problem-solving, punctuality, and communication skills.</p>      
+        <p class="desc">
+          Hi, I'm Jeffson, an MCA student at St. Joseph Engineering College, Mangalore. I have a passion for technology and problem-solving, and I’m constantly improving my skills to stay up-to-date with the latest trends. My proficiency spans across C, Python,Java, HTML, CSS, and JavaScript, Bootstrap, React and I enjoy working on both front-end and back-end development challenges.
+          
+          I’m driven by the idea of creating solutions that make a real difference. Whether it’s building responsive websites, solving complex coding problems, or working collaboratively on team projects, I bring strong attention to detail, punctuality, and excellent communication skills to everything I do.
+        
+          As I continue my journey in the tech world, I’m eager to expand my knowledge, build innovative applications, and collaborate on impactful projects. Feel free to check out my work and learn more about my skills, experiences, and ambitions.
+        </p>     
         <div class="about-buttons">
           <button data-content="education" class="about-btn active">Education</button>
           <button data-content="skills" class="about-btn">Skills</button>
@@ -191,7 +204,7 @@
         
             <!-- Certification 1 -->
             <div class="internship-item">
-              <img src="Img/certificate\sjecinternship.jpg" alt="Web Development Intern" class="internship-img">
+              <img src="Img/certificate/sjecinternship.jpg" alt="Web Development Intern" class="internship-img">
               <div class="internship-details">
                 <h4 class="internship-title">Web Development Intern</h4>
                 <p class="certification-platform">Completed an one-month internship at SJEC, where i worked on developing student academic details
@@ -394,7 +407,7 @@
   <p>If you'd like to get in touch, feel free to reach out to me using the form below or through my social media profiles.</p> 
   <div class="contact-container">
     <!-- Contact Form -->
-    <form class="contact-form" action="your-server-endpoint" method="POST">
+    <form class="contact-form" id="contact-form">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required />
@@ -407,8 +420,28 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
       </div>
+      
+      <!-- Spam prevention -->
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+
+      
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html?submitted=true">
+    
+    
       <button type="submit" class="submit-button">Send Message</button>
     </form>
+
+
+
+    <div id="thankYouModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Thank You!</h2>
+        <p>Your message has been received. I'll get back to you soon.</p>
+      </div>
+    </div>
+    
     
     <div class="icons">
       <a href="https://github.com/Jeffson-dsilva" target="_blank" aria-label="GitHub">
@@ -422,10 +455,11 @@
       </a>
       <a href="https://www.instagram.com/_jeffson__dsilva__" aria-label="Instagram">
         <i class="bx bxl-instagram"></i>
+      </a>
         <a href="https://x.com/dsilva_jeffson" aria-label="Twitter">
           <i class="bx bxl-twitter"></i>
         </a>
-      </a>
+      
     </div>
   </div>
 </section>
