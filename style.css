@@ -55,9 +55,15 @@ a {
   font-weight: 500;
   transition: .5s;
 }
-.navbar ul li:hover a,
-.navbar ul li.active a {
+.navbar ul li:hover a{
   color: #7ff03d;
+}
+.nav-links a.active {
+  color: #7cf03d;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 4px;
+  border-bottom: 2px solid #7cf03d;
 }
 .hamburger {
   display: none; 
@@ -141,6 +147,7 @@ section h2 {
 .btn {
   display: inline-block;
   padding: 10px 30px;
+  margin-right: 10px;
   background: #7cf03d;
   border: 2px solid #7cf03d;
   border-radius: 40px;
@@ -154,6 +161,43 @@ section h2 {
   color: #7cf03d;
   box-shadow: none;
 }
+
+.cv-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cv-modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 30px;
+  padding: 4px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.cv-modal .close {
+  position: absolute;
+  right: 20px; top: 20px;
+  font-size: 24px;
+  color: #1f242d;
+  cursor: pointer;
+}
+.cv-modal iframe {
+  width: 100%;
+  height: 85vh; 
+  border: none;
+}
+
+
 .home-info .btn-sci .sci {
   margin-left: 20px;
 }
@@ -266,10 +310,10 @@ section h2 {
 }
 
 .about .desc {
-  font-size: 20px;
-  margin: 10px 0 25px;
+  font-size: 18px;
+  margin: 10px 5px 20px;
   color: white;
-  text-align: center;
+  text-align: justify;
 }
 .about-content {
   display: block;
@@ -292,6 +336,7 @@ section h2 {
   color: white;
   font-size: 28px;
   padding: 15px;
+  border-radius: 6px;
   text-align: center;
   cursor: pointer;
   width: -webkit-fill-available;
@@ -661,8 +706,14 @@ section h2 {
   width: 100%;
   max-width: 600px;
   padding: 30px;
+  border: 2px solid #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+.contact-form:hover{
+  transform: translateY(-5px);
+  border: 2px solid #7cf03d;
+  box-shadow: 2px 6px 12px 2px rgba(124, 240, 61, 0.7);
 }
 .contact-form .form-group {
   margin-bottom: 20px;
@@ -687,7 +738,7 @@ section h2 {
   background-color: #7cf03d;
   border: none;
   padding: 15px 30px;
-  color: #fff;
+  color: #1f242d;
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 5px;
@@ -696,8 +747,43 @@ section h2 {
 .contact-form button:hover {
   background-color: #1f242d;
   border: 2px solid #7cf03d;
+  color: #7cf03d;
   box-shadow: 0 6px 12px rgba(124, 240, 61, 0.7);
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  position: relative; /* Add this line */
+  background-color: #7cf03d;
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+.close {
+  position: absolute;
+  color: black;
+  right: 20px; top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-content h2, .modal-content p{
+  color: #1f242d;
+}
+
 .icons {
   display: flex;
   justify-content: center;
@@ -777,11 +863,6 @@ section h2 {
     transition: background-color 0.3s, color 0.3s;
   }
 
-  .navbar ul li a:hover {
-    background-color: #7ff03d; 
-    color: #000; 
-  }
-
   .hamburger {
     display: block; 
     cursor: pointer;
@@ -820,6 +901,22 @@ section h2 {
     font-size: 22px;
     margin-top: 10px;
   }
+  .home-info .btn-sci .sci {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .home-info .btn-sci {
+    display: inline-block;
+  }
+  .cv-modal-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .cv-modal iframe {
+    height: 60vh;
+  }
+
   .about-details h3 span {
     font-size: 20px;
   }
@@ -902,6 +999,9 @@ section h2 {
   .contact p {
   margin-bottom: 30px;
   }
+  .icons{
+    margin-bottom: 30px;
+  }
 }
 @media (max-width: 480px) {
   .navbar ul {
@@ -912,7 +1012,7 @@ section h2 {
   .hamburger {
     font-size: 26px;
   }
-
+  
 
   .about-buttons button {
     width: 100%; 
